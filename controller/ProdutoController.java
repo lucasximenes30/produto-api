@@ -17,6 +17,7 @@ public class ProdutoController {
 
     public ProdutoController(ProdutoRepository produtoRepository) {
         this.produtoRepository = produtoRepository;
+
     }
 
     @PostMapping
@@ -28,9 +29,9 @@ public class ProdutoController {
         produtoRepository.save(produto);
         return produto;
     }
-
     @GetMapping("{id}")
-    public Produto obterPorId(@PathVariable("id") String id){
+    public Produto obterPorId(@PathVariable String id){
         return produtoRepository.findById(id).orElse(null);
     }
+
 }
