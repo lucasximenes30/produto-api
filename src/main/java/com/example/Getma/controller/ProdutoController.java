@@ -6,6 +6,7 @@ import com.example.Getma.repository.ProdutoRepository;
 import lombok.Data;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -27,14 +28,20 @@ public class ProdutoController {
     @GetMapping("{id}")
     public Produto salvarPorId(@PathVariable String id){
         return produtoRepository.findById(id).orElse(null);
+
     }
     @DeleteMapping("{id}")
     public void deletar(@PathVariable String id){
         produtoRepository.deleteById(id);
+
     }
     public void atualizar(@PathVariable("id") String id, @RequestBody Produto produto ){
         produto.setId(id);
         produtoRepository.save(produto);
+    }
+    @GetMapping
+    public List <Produto> buscar(@RequestParam("nome") String nome){
+        return produtoRepository.findByNome(nome);
     }
 
 
