@@ -1,12 +1,11 @@
-package com.example.demo.repository;
+package com.example.Getma.repository;
 
-import com.example.demo.model.Produto;
+import com.example.Getma.model.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
 public interface ProdutoRepository extends JpaRepository<Produto, String> {
-
 
     List<Produto> id(String id);
 }

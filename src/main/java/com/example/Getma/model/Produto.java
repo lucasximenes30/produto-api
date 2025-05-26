@@ -1,17 +1,15 @@
-package com.example.demo.model;
+package com.example.Getma.model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
-import jakarta.persistence.Entity;
-
 
 @Entity
-@Table(name = "produto")
 @Data
+@Table(name = "produtos")
 public class Produto {
-
     @Id
     @Column(name = "id")
     private String id;
@@ -21,5 +19,4 @@ public class Produto {
     private String descricao;
     @Column(name = "preco")
     private double preco;
-
 }
